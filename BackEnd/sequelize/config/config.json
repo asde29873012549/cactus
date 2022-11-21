@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "Noah",
+    "password": "vfdx0859124",
+    "database": "cactus",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "Noah",
+    "password": "vfdx0859124",
+    "database": "cactus",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "Noah",
+    "password": "vfdx0859124",
+    "database": "cactus",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
