@@ -1,2 +1,3 @@
 FrontEnd/.env
 BackEnd/.env
+BackEnd/sequelize/config/config.json
