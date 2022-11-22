@@ -4,10 +4,10 @@ import {S3Client, PutObjectCommand} from "@aws-sdk/client-s3"
 import crypto from 'crypto'
 const Bucket_Name = 'cactus-store'
 
-const bucketName = 'cactus-store'
-const bucketRegion = 'us-west-2'
-const bucketKey = 'AKIASYRELSODI7ML7DJP'
-const bucketSecretKey = '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'
+const bucketName = process.env.AWS_BUCKET_NAME
+const bucketRegion = process.env.AWS_BUCKET_REGION
+const bucketKey = process.env.AWS_ACCESS_KEY
+const bucketSecretKey = process.env.AWS_SECRET_KEY
 
 const randomImageName = (bytes = 32) => crypto.randomBytes(bytes).toString('hex')
 
