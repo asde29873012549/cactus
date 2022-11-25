@@ -126,7 +126,7 @@ const server = app.listen(port, () => {
 	console.log(`Example app listening on port ${port}!`)
 })
 
-const io = new Server(server, { cors: { origin: 'http://localhost:3000' } })
+const io = new Server(server, { cors: { origin: 'https://cactus.zeabur.app' } })
 
 io.on('connection', socket => {
 	console.log(`This is connected to ${socket.id}`)
