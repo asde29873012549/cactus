@@ -1,12 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import searchImage from './static/search.png'
+import menu from './static/menu.png'
 import shoppingCartImage from './static/shopping-cart.png'
 import {useDispatch, useSelector} from 'react-redux'
 import {openLoginForm, accountSelector, handleLogin, handleLogout, storeUser} from '../redux/accountSlice'
+import {openSideBarMobile} from '../redux/shopSlice'
 import {Link} from 'react-router-dom'
 import {getMe} from '../WebAPI'
 import {LogoutAction, LoginAction} from './utils'
+import {MEDIA_QUERY_MD, MEDIA_QUERY_SM} from '../breakpoints'
 
 const NavbarWrapper = styled.div `
 display:flex;
@@ -15,6 +18,10 @@ align-items:center;
 width:90vw;
 height:15vh;
 margin:0 auto;
+
+${MEDIA_QUERY_SM} {
+flex-direction:column;
+}
 `
 
 const BrandName = styled(Link) `
@@ -23,13 +30,20 @@ font-weight:900;
 letter-spacing:10px;
 text-decoration:none;
 color:#1C1C1C;
+
+${MEDIA_QUERY_SM} {
+letter-spacing:5px;
+}
 `
 
 const SearchBarContainer = styled.div `
 width:35vw;
-height:5vh;
+max-height:5vh;
 display:flex;
 align-items:center;
+${MEDIA_QUERY_SM} {
+	width:80vw;
+}
 `
 
 const SearchBar = styled.input `
@@ -58,15 +72,18 @@ margin-left:-30px;
 
 const FeaturesWrapper = styled.div `
 display:flex;
-font-size:0.8rem;
+font-size:clamp(12px, 100%, 0.8rem);
 font-weight:bold;
 align-items:center;
-justify-content:flex-end;
+justify-content:space-between;
 width:25%;
+${MEDIA_QUERY_SM} {
+	width:80%;
+	margin:10px 0;
+}
 `
 
 const Sell = styled(Link) `
-margin-left:8%;
 text-decoration:none;
 color:#1C1C1C;
 &:hover {
@@ -75,7 +92,6 @@ color:#1C1C1C;
 `
 
 const Shop = styled(Link) `
-margin-left:8%;
 text-decoration:none;
 color:#1C1C1C;
 &:hover {
@@ -102,9 +118,12 @@ background-image:url(${shoppingCartImage});
 width:28px;
 height:28px;
 background-size:cover;
-margin-left:8%;
 &:hover {
 	cursor:pointer;
+}
+${MEDIA_QUERY_SM} {
+	width:18px;
+	height:18px;
 }
 `
 
@@ -113,9 +132,36 @@ border-radius:50%;
 background-color:#DB4D6D;;
 width:28px;
 height:28px;
-margin-left:8%;
 &:hover {
 	cursor:pointer;
+}
+${MEDIA_QUERY_SM} {
+	width:18px;
+	height:18px;
+}
+`
+
+const Menu = styled.div `
+background-image:url(${menu});
+background-position:center;
+background-size:cover;
+position:absolute;
+height:30px;
+width:30px;
+display:none;
+${MEDIA_QUERY_MD} {
+	height:50px;
+	width:50px;
+	top:1vh;
+	left:3vw;
+	display:block;
+}
+${MEDIA_QUERY_SM} {
+	height:30px;
+	width:30px;
+	top:1vh;
+	left:3vw;
+	display:block;
 }
 `
 
@@ -179,8 +225,13 @@ export default function Header () {
 		LogoutAction.clearUsernameCookie()
 	}
 
+	const openSidebar = () => {
+		dispatch(openSideBarMobile())
+	}
+
 	return (
 		<NavbarWrapper>
+			<Menu onClick={openSidebar}/>
 			<BrandName to='/'>CACTUS</BrandName>
 			<SearchBarContainer>
 				<SearchBar value={input} onChange={onSearchInputChange} placeholder='Search'></SearchBar>

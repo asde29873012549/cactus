@@ -85,7 +85,7 @@ const userController = {
 	generateConsentPageUrl : (req, res) => {
 		const oauth2Client = new google.auth.OAuth2(
 			'567926913321-oofmqdtjvc13bvnlsviubhdrpkuma4vm.apps.googleusercontent.com',
-			'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',
+			'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',
 			'http://localhost:5001/Oauth2/google'
 		)
 		const scopes = [
@@ -106,7 +106,7 @@ const userController = {
 
 		const oauth2Client = new google.auth.OAuth2(
 			'567926913321-oofmqdtjvc13bvnlsviubhdrpkuma4vm.apps.googleusercontent.com',
-			'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',
+			'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',
 			'http://localhost:5001/Oauth2/google'
 		)
 		const {code} = req.query

@@ -1,5 +1,6 @@
 import React, {useEffect, useRef} from 'react'
 import styled from 'styled-components'
+import {MEDIA_QUERY_SM, MEDIA_QUERY_MD} from '../breakpoints'
 
 const Dropdown = styled.div `
 width:360px;
@@ -14,6 +15,12 @@ max-height:500px;
 overflow:scroll;
 ::-webkit-scrollbar {
     display: none;
+}
+${MEDIA_QUERY_MD} {
+	max-width:350px;
+}
+${MEDIA_QUERY_SM} {
+	max-width:300px;
 }
 `
 const Option = styled.div `
@@ -47,6 +54,14 @@ text-align:center;
 line-height:38px;
 box-sizing:border-box;
 margin-top:30px;
+${MEDIA_QUERY_MD} {
+	max-width:350px;
+	height:40px;
+}
+${MEDIA_QUERY_SM} {
+	max-width:300px;
+	height:40px;
+}
 `
 
 

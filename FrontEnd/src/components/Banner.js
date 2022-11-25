@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import video from './static/prada_2021_menswear_video.webm'
 import {Link} from 'react-router-dom'
+import {MEDIA_QUERY_SM, MEDIA_QUERY_MD} from '../breakpoints'
 
 
 const BannerVideo = styled.video `
@@ -11,6 +12,12 @@ font-size:2.2rem;
 color:white;
 font-weight:bold;
 z-index:2;
+${MEDIA_QUERY_MD} {
+	font-size:1.2rem;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.7rem;
+}
 `
 
 const Content = styled.p `
@@ -19,6 +26,14 @@ color:white;
 z-index:2;
 font-weight:400;
 margin:40px 0;
+${MEDIA_QUERY_MD} {
+	margin:20px 0;
+	font-size:1rem;
+}
+${MEDIA_QUERY_SM} {
+	margin:8px 0;
+	font-size:0.6rem;
+}
 `
 
 const ButtonWrapper = styled.div `
@@ -41,6 +56,14 @@ font-weight:800;
 	cursor:pointer;
 	color:#1C1C1C;
 }
+${MEDIA_QUERY_MD} {
+	font-size:0.6rem;
+	padding:10px 15px;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.4rem;
+	padding:5px 7px;
+}
 `
 
 const WomensWear = styled(Link) `
@@ -60,6 +83,15 @@ color:white;
 	cursor:pointer;
 	color:#1C1C1C;
 }
+${MEDIA_QUERY_MD} {
+	font-size:0.6rem;
+	padding:10px 15px;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.4rem;
+	padding:5px 7px;
+	margin-left:20px;
+}
 `
 
 const Div = styled.div `
@@ -74,11 +106,12 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 width:100vw;
-margin-top:162px;
 `
 
 const D = styled.div `
 position:relative;
+display:flex;
+align-items:center;
 `
 
 

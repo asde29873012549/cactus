@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {removeFromCart, getUserShoppingCart} from '../WebAPI'
+import {MEDIA_QUERY_SM, MEDIA_QUERY_MD} from '../breakpoints'
 
 
 const Item = styled.div `
@@ -62,6 +63,14 @@ color:#1C1C1C;
 position:absolute;
 &:hover {
 	cursor:pointer;
+}
+${MEDIA_QUERY_MD} {
+	font-size:0.3rem;
+	margin-top:30%;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.3rem;
+	margin-top:30%;
 }
 `
 

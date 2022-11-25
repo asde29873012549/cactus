@@ -11,6 +11,8 @@ import {accountSelector} from '../redux/accountSlice'
 import {useSelector, useDispatch} from 'react-redux'
 import AccountForm from '../components/LoginLogout'
 import {openLoginForm} from '../redux/accountSlice'
+import {MEDIA_QUERY_SM, MEDIA_QUERY_MD} from '../breakpoints'
+
 
 const SellWrapper = styled.form `
 display:flex;
@@ -18,19 +20,39 @@ flex-direction:column;
 align-items:flex-start;
 width:55%;
 margin:70px auto;
+${MEDIA_QUERY_MD} {
+	width:85vw;
+}
+${MEDIA_QUERY_SM} {
+	width:85vw;
+}
+
 `
 
 const Head = styled.div ``
 
 const Body = styled.div `
-margin:40px 0;
+margin:40px auto;
 `
 
-const PhotoUploadSection = styled.div ``
+const PhotoUploadSection = styled.div `
+${MEDIA_QUERY_MD} {
+	width:85vw;
+}
+${MEDIA_QUERY_SM} {
+	width:85vw;
+}
+`
 
 const Title = styled.div `
 font-size:1.8rem;
 font-weight:900;
+${MEDIA_QUERY_MD} {
+	font-size:1.4rem;
+}
+${MEDIA_QUERY_SM} {
+	font-size:1.2rem;
+}
 `
 
 const SectionTitle = styled.div `
@@ -38,6 +60,12 @@ font-size:1.5rem;
 font-weight:800;
 letter-spacing:2px;
 color:rgba(0,0,0,0.7);
+${MEDIA_QUERY_MD} {
+	font-size:1rem;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.9rem;
+}
 `
 
 const Details = styled.div ``
@@ -49,6 +77,16 @@ grid-template-rows: auto auto;
 grid-gap:60px 60px;
 width:100%;
 margin:30px 0;
+${MEDIA_QUERY_MD} {
+	display:flex;
+	flex-direction:column;
+	margin:30px auto;
+}
+${MEDIA_QUERY_SM} {
+	display:flex;
+	flex-direction:column;
+	margin:30px auto;
+}
 `
 
 const Detail = styled.div `
@@ -62,6 +100,14 @@ text-align:center;
 line-height:38px;
 box-sizing:border-box;
 margin-top:30px;
+${MEDIA_QUERY_MD} {
+	max-width:350px;
+	height:40px;
+}
+${MEDIA_QUERY_SM} {
+	max-width:300px;
+	height:40px;
+}
 `
 
 const DescriptionInput = styled.textarea `
@@ -75,11 +121,27 @@ box-sizing:border-box;
 padding:5px 10px;
 font-family:YuGothic;
 font-style:italic;
+${MEDIA_QUERY_MD} {
+	font-size:0.7rem;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.5rem;
+}
+
 `
 
 const Description = styled.div ``
 
-const Photo = styled.div ``
+const Photo = styled.div `
+margin:0 auto;
+${MEDIA_QUERY_MD} {
+	width:70vw;
+}
+${MEDIA_QUERY_SM} {
+	width:70vw;
+}
+
+`
 
 const FooterWrapper = styled.div `
 display:flex;
@@ -88,6 +150,12 @@ align-items:center;
 width:100%;
 padding:0 20px;
 box-sizing:border-box;
+${MEDIA_QUERY_MD} {
+	justify-content:center;
+}
+${MEDIA_QUERY_SM} {
+	justify-content:center;
+}
 `
 const DepartmentAndCategory = styled.div `
 width:360px;
@@ -97,6 +165,12 @@ position:absolute;
 background-color:white;
 box-sizing:border-box;
 ${props => props.dropdownActive ? null: 'display:none'};
+${MEDIA_QUERY_MD} {
+	max-width:350px;
+}
+${MEDIA_QUERY_SM} {
+	max-width:300px;
+}
 `
 
 const Submit = styled.input `
@@ -110,8 +184,19 @@ text-align:center;
 line-height:50px;
 font-size:0.9rem;
 font-weight:800;
+border:2px solid #1C1C1C;
 &:hover {
 	cursor:pointer;
+}
+${MEDIA_QUERY_MD} {
+	max-width:140px;
+	font-size:0.7rem;
+}
+${MEDIA_QUERY_SM} {
+	max-width:90px;
+	height:40px;
+	font-size:0.6rem;
+	line-height:40px;
 }
 `
 
@@ -129,6 +214,16 @@ font-size:0.9rem;
 font-weight:800;
 &:hover {
 	cursor:pointer;
+}
+${MEDIA_QUERY_MD} {
+	max-width:140px;
+	font-size:0.7rem;
+}
+${MEDIA_QUERY_SM} {
+	max-width:90px;
+	height:40px;
+	font-size:0.6rem;
+	line-height:40px;
 }
 `
 
@@ -155,6 +250,12 @@ overflow:scroll;
 ::-webkit-scrollbar {
     display: none;
 }
+${MEDIA_QUERY_MD} {
+	max-width:350px;
+}
+${MEDIA_QUERY_SM} {
+	max-width:300px;
+}
 `
 
 const Menswear = styled.div ``
@@ -178,7 +279,14 @@ line-height:40px;
 	background-color:rgba(240, 240, 240, 0.5);
 	color:#1C1C1C;
 };
-
+${MEDIA_QUERY_MD} {
+	max-width:350px;
+	height:40px;
+}
+${MEDIA_QUERY_SM} {
+	max-width:300px;
+	height:40px;
+}
 `
 const MoreDetail = styled.div ``
 

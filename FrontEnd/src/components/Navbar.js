@@ -6,6 +6,7 @@ import {getAllFilteredListing} from '../redux/shopSlice'
 import {getSingleDesigner} from '../redux/designerSlice'
 import {useDispatch} from 'react-redux'
 import {Link} from 'react-router-dom'
+import {MEDIA_QUERY_SM, MEDIA_QUERY_MD} from '../breakpoints'
 
 const NavBarWrapper = styled.div `
 width:90vw;
@@ -16,6 +17,9 @@ justify-content:space-between;
 align-items:center;
 font-size:0.9rem;
 padding:5px;
+${MEDIA_QUERY_MD} {
+	display:none;
+}
 `
 
 const DropDownWrapper = styled.div `
@@ -43,6 +47,9 @@ const Line = styled.div `
 height:1px;
 width:100vw;
 background-color:rgba(0, 0, 0, 0.2);
+${MEDIA_QUERY_MD} {
+	display:none;
+}
 `
 
 const NavButton = styled.div `

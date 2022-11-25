@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Chatroom from './Chatroom'
 import ChatList from './ChatList'
 import {getUserChatroom} from '../WebAPI'
+import {MEDIA_QUERY_SM, MEDIA_QUERY_MD} from '../breakpoints'
 
 
 
@@ -15,6 +16,12 @@ const MessageHeader = styled.div `
 width:90%;
 heidht:40px;
 display:flex;
+${MEDIA_QUERY_MD} {
+	width:100%;
+}
+${MEDIA_QUERY_SM} {
+	width:100%;
+}
 `
 const BUYMessage = styled.div `
 display:inline-block;
@@ -54,6 +61,12 @@ transition:border 0.3s ease-in-out;
 const MessageBody = styled.div `
 width:90%;
 margin-bottom:100px;
+${MEDIA_QUERY_MD} {
+	width:100%;
+}
+${MEDIA_QUERY_SM} {
+	width:100%;
+}
 `
 
 

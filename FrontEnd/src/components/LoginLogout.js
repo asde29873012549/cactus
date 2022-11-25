@@ -6,6 +6,7 @@ import {accountSelector, openLoginForm, switchLoginToRegister, handleLogin, stor
 import {registerUser, loginUser} from '../WebAPI'
 import GoogleLoginBtn from './GoogleLoginButton'
 import FaceBookLoginBtn from './FaceBookLoginButton'
+import {MEDIA_QUERY_SM, MEDIA_QUERY_MD} from '../breakpoints'
 
 const Form = styled.form `
 position:fixed;
@@ -28,6 +29,14 @@ box-sizing:border-box;
 transition:opacity 0.3s ease-in-out;
 overflow:hidden;
 opacity:${props => props.opened ? '1' : '0'};
+${MEDIA_QUERY_MD} {
+	width:50vw;
+	height:50vh;
+}
+${MEDIA_QUERY_SM} {
+	width:80vw;
+	height:50vh;
+}
 `
 
 const Wrapper = styled.div `
@@ -60,6 +69,13 @@ width:100%;
 const UsernameInput = styled.input `
 height:35px;
 width:100%;
+box-sizing:border-box;
+${MEDIA_QUERY_MD} {
+	height:3vh;
+}
+${MEDIA_QUERY_SM} {
+	height:3vh;
+}
 `
 
 const Email = styled.div `
@@ -69,6 +85,13 @@ width:100%;
 const EmailInput = styled.input `
 height:35px;
 width:100%;
+box-sizing:border-box;
+${MEDIA_QUERY_MD} {
+	height:3vh;
+}
+${MEDIA_QUERY_SM} {
+	height:3vh;
+}
 `
 
 const Password = styled.div `
@@ -78,6 +101,13 @@ width:100%;
 const PasswordInput = styled.input `
 height:35px;
 width:100%;
+box-sizing:border-box;
+${MEDIA_QUERY_MD} {
+	height:3vh;
+}
+${MEDIA_QUERY_SM} {
+	height:3vh;
+}
 `
 
 const SignInSubmit = styled.input `
@@ -91,6 +121,12 @@ border:1px solid #1C1C1C;
 border-radius:8px;
 &:hover {
 	cursor:pointer;
+}
+${MEDIA_QUERY_MD} {
+	height:3vh;
+}
+${MEDIA_QUERY_SM} {
+	height:3vh;
 }
 `
 
@@ -106,9 +142,22 @@ border-radius:8px;
 &:hover {
 	cursor:pointer;
 }
+${MEDIA_QUERY_MD} {
+	height:3vh;
+}
+${MEDIA_QUERY_SM} {
+	height:3vh;
+}
 `
 
-const OR = styled.div ``
+const OR = styled.div `
+${MEDIA_QUERY_MD} {
+	font-size:0.7rem;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.7rem;
+}
+`
 
 const Name = styled.div `
 font-size:0.8rem;

@@ -4,6 +4,7 @@ import youtube from './static/youtube.png'
 import facebook from './static/facebook.png'
 import twitter from './static/twitter.png'
 import instagram from './static/instagram.png'
+import {MEDIA_QUERY_SM, MEDIA_QUERY_MD} from '../breakpoints'
 
 
 const FooterWrapper = styled.div `
@@ -13,7 +14,6 @@ background-color:white;
 justify-content:center;
 align-items:center;
 width:100vw;
-height:8vh;
 padding:20px 0px;
 `
 
@@ -27,6 +27,11 @@ display:flex;
 justify-content:space-between;
 letter-spacing:-0.5px;
 align-items:center;
+${MEDIA_QUERY_MD} {
+	flex-direction:column;
+	line-height:18px;
+}
+
 `
 
 const SubSection = styled(Section) `
@@ -44,6 +49,9 @@ background-size:cover;
 background-position:center;
 &+& {
 	margin-left:15px;
+}
+${MEDIA_QUERY_MD} {
+	margin-top:10px;
 }
 `
 

@@ -12,6 +12,7 @@ import {useSelector} from 'react-redux'
 import {accountSelector} from '../redux/accountSlice'
 import {useNavigate} from 'react-router-dom'
 import {messageSelector} from '../redux/messageSlice'
+import {MEDIA_QUERY_SM, MEDIA_QUERY_MD} from '../breakpoints'
 
 
 const MePageWrapper = styled.div `
@@ -25,6 +26,14 @@ justify-content:center;
 align-items:flex-start;
 width:100%;
 margin-top:30px;
+${MEDIA_QUERY_MD} {
+	flex-direction:column;
+	align-items:center;
+}
+${MEDIA_QUERY_SM} {
+	flex-direction:column;
+	align-items:center;
+}
 `
 
 const RightBodyPart = styled.div `

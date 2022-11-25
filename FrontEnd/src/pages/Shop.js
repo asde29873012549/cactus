@@ -12,11 +12,18 @@ import {getListing, getFilteredListing} from '../WebAPI.js'
 import {BlackBackground} from '../components/utils'
 import AccountForm from '../components/LoginLogout'
 import {accountSelector, openLoginForm} from '../redux/accountSlice'
+import {MEDIA_QUERY_SM, MEDIA_QUERY_MD} from '../breakpoints'
 
 const ShopContentWrapper = styled.div `
 width:80%;
 margin:30px auto;
 display:flex;
+${MEDIA_QUERY_MD} {
+	width:90%;
+}
+${MEDIA_QUERY_SM} {
+	width:95%;
+}
 `
 
 const SidebarWrapper = styled.div `
@@ -30,6 +37,12 @@ width:100%;
 const Listings = styled.div `
 margin:0 auto;
 width:890px;
+${MEDIA_QUERY_MD} {
+	width:75vw;
+}
+${MEDIA_QUERY_SM} {
+	width:90vw;
+}
 `
 
 const Hr = styled.div `

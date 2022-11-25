@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import googleIcon from './static/googleIcon.jpg'
+import {MEDIA_QUERY_SM, MEDIA_QUERY_MD} from '../breakpoints'
 
 const GoogleSignIn = styled.a `
 width:100%;
@@ -13,6 +14,14 @@ display:flex;
 align-items:center;
 text-decoration:none;
 color:#1C1C1C;
+${MEDIA_QUERY_MD} {
+	height:3vh;
+	font-size:0.7rem;
+}
+${MEDIA_QUERY_SM} {
+	height:3vh;
+	font-size:0.7rem;
+}
 `
 
 const GoogleIcon = styled.div `

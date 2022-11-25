@@ -6,6 +6,7 @@ import SingleOrderSection from '../components/SingleOrderSection'
 import {getUserShoppingCart, getUserProfile, submitOrder} from '../WebAPI.js'
 import {customAlphabet} from 'nanoid'
 import {format} from 'date-fns'
+import {MEDIA_QUERY_SM, MEDIA_QUERY_MD} from '../breakpoints'
 
 const ShoppingCartWrapper = styled.div `
 display:flex;
@@ -13,10 +14,24 @@ width:80%;
 margin:60px auto;
 justify-content:space-between;
 align-items:flex-start;
+${MEDIA_QUERY_MD} {
+	flex-direction:column;
+}
+${MEDIA_QUERY_SM} {
+	flex-direction:column;
+}
 `
 
 const ListingSection = styled.div `
 width:700px;
+${MEDIA_QUERY_MD} {
+	margin-bottom:30px;
+	max-width:80vw;
+}
+${MEDIA_QUERY_SM} {
+	margin-bottom:30px;
+	max-width:80vw;
+}
 `
 
 const OrderInfoSection = styled.form `
@@ -25,6 +40,7 @@ display:flex;
 justify-content:center;
 flex-direction:column;
 align-items:flex-start;
+
 `
 
 const ListingWrapper = styled.div `
@@ -59,6 +75,12 @@ const ShippingAddressWrapper = styled.div `
 display:flex;
 flex-direction:column;
 width:100%;
+${MEDIA_QUERY_MD} {
+	align-items:center;
+}
+${MEDIA_QUERY_SM} {
+	align-items:center;
+}
 `
 
 const Title = styled.div `

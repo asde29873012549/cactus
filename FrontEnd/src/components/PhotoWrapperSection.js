@@ -2,6 +2,7 @@ import React, {useRef, useState} from 'react'
 import styled from 'styled-components'
 import camera from '../components/static/camera.png'
 import cancel from '../components/static/cancel.png'
+import {MEDIA_QUERY_SM, MEDIA_QUERY_MD} from '../breakpoints'
 
 const CancelIcon = styled.div `
 position:absolute;
@@ -19,6 +20,12 @@ display:block;
 const Wrapper = styled.div `
 display:inline-block;
 margin:16px;
+${MEDIA_QUERY_MD} {
+	margin:12px;
+}
+${MEDIA_QUERY_SM} {
+	margin:6px;
+}
 `
 
 const PhotoWrapper = styled.label `
@@ -34,6 +41,14 @@ background-size:initial;
 background-repeat:no-repeat;
 &:hover {
 	cursor:pointer;
+}
+${MEDIA_QUERY_MD} {
+	width:30vw;
+	height:20vh;
+}
+${MEDIA_QUERY_SM} {
+	width:30vw;
+	height:20vh;
 }
 `
 

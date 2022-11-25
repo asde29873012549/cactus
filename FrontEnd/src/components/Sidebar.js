@@ -14,6 +14,7 @@ import {
 } from '../redux/shopSlice'
 import DepartmentWrapper from './DepartmentWrapper'
 import {getDesigner, getSize, getDepartment, getCondition, getCategory, getSubCategory} from '../WebAPI.js'
+import {MEDIA_QUERY_SM, MEDIA_QUERY_MD} from '../breakpoints'
 
 const SidebarWrapper = styled.div `
 display:flex;
@@ -21,6 +22,24 @@ flex-direction:column;
 align-items:flex-start;
 justify-content:center;
 width:100%;
+${MEDIA_QUERY_MD} {
+	display:${props => props.mobileActive ? 'block' :'none'};
+	position:absolute;
+	background-color:white;
+	z-index:5;
+	width:${props => props.mobileActive ? '40vw' :'0'};
+	padding-right:7px;
+	transition:all 0.5s ease-in-out;
+}
+${MEDIA_QUERY_SM} {
+	display:${props => props.mobileActive ? 'block' :'none'};
+	position:absolute;
+	background-color:white;
+	z-index:5;
+	width:${props => props.mobileActive ? '35vw' :'0'};
+	padding-right:7px;
+	transition:all 0.5s ease-in-out;
+}
 `
 
 const SidebarTitles = styled.div `
@@ -28,6 +47,12 @@ font-size:1.2rem;
 font-weight:700;
 &:hover {
 	cursor:pointer;
+}
+${MEDIA_QUERY_MD} {
+	font-size:0.8rem;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.8rem;
 }
 `
 
@@ -44,18 +69,36 @@ margin-left:-15px;
 &:hover {
 	cursor:pointer;
 }
+${MEDIA_QUERY_MD} {
+	font-size:0.7rem;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.7rem;
+}
 `
 
 const MenswearSection = styled.div `
 display:flex;
 flex-direction:column;
 margin-left:40px;
+${MEDIA_QUERY_MD} {
+	margin-left:30px;
+}
+${MEDIA_QUERY_SM} {
+	margin-left:20px;
+}
 `
 
 const WomenswearSection = styled.div `
 display:flex;
 flex-direction:column;
 margin-left:40px;
+${MEDIA_QUERY_MD} {
+	margin-left:30px;
+}
+${MEDIA_QUERY_SM} {
+	margin-left:20px;
+}
 `
 
 const Catogories = styled.div `
@@ -67,6 +110,7 @@ const Category = styled.div `
 margin:7px 0;
 display:flex;
 justify-content:space-between;
+align-items:center;
 width:100%;
 &:hover {
 	cursor:pointer;
@@ -79,6 +123,12 @@ font-weight:500;
 &:hover {
 	cursor:pointer;
 }
+${MEDIA_QUERY_MD} {
+	font-size:0.6rem;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.6rem;
+}
 `
 
 const Arrow = styled.div `
@@ -86,6 +136,14 @@ width:10px;
 height:10px;
 background-color:#1C1C1C;
 -webkit-clip-path:polygon(0 40%, 50% 85%, 100% 40%, 100% 55%, 50% 100%, 0 55%);
+${MEDIA_QUERY_MD} {
+	width:8px;
+	height:8px;
+}
+${MEDIA_QUERY_SM} {
+	width:6px;
+	height:6px;
+}
 `
 
 const DesignerSearchbarWrapper = styled.div `
@@ -122,6 +180,12 @@ margin:20px 0;
 &:hover {
 	cursor:pointer;
 }
+${MEDIA_QUERY_MD} {
+	font-size:1rem;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.7rem;
+}
 `
 
 const MinPrice = styled.input `
@@ -130,6 +194,14 @@ width:70px;
 height:25px;
 border-radius:4px;
 border:1px solid grey;
+${MEDIA_QUERY_MD} {
+	width:8vw;
+	height:15px;
+}
+${MEDIA_QUERY_SM} {
+	width:8vw;
+	height:15px;
+}
 `
 
 const MaxPrice = styled.input `
@@ -138,16 +210,26 @@ width:70px;
 height:25px;
 border-radius:4px;
 border:1px solid grey;
+${MEDIA_QUERY_MD} {
+	width:8vw;
+	height:15px;
+}
+${MEDIA_QUERY_SM} {
+	width:8vw;
+	height:15px;
+}
 `
 
 const CheckBoxesWrapper = styled.div `
 display:flex;
 flex-direction:column;
 margin-left:20px;
+
 `
 
 const CategoryCheckBoxesWrapper = styled(CheckBoxesWrapper) `
 display:none;
+
 `
 
 export default function Sidebar ({onCheckboxChange}) {
@@ -223,7 +305,7 @@ export default function Sidebar ({onCheckboxChange}) {
 
 
 	return (
-		<SidebarWrapper>
+		<SidebarWrapper mobileActive={sidebarSelect.sideBarMobileActive}>
 			<DepartmentWrapper>
 				<SidebarTitles onClick={onDepartmentClick}>Department</SidebarTitles>
 				{sidebarSelect.sidebar.department ?

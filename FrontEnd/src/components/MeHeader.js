@@ -4,6 +4,7 @@ import {useDispatch} from 'react-redux'
 import {setProfileUpdateActive} from '../redux/accountSlice'
 import {setSidebarCategoryActive} from '../redux/messageSlice'
 import {changeUserAvatar, getUserProfile} from '../WebAPI'
+import {MEDIA_QUERY_SM, MEDIA_QUERY_MD} from '../breakpoints'
 
 
 const Header = styled.div `
@@ -39,6 +40,14 @@ filter: drop-shadow(0px 10px 10px rgba(70, 70, 70,.2));
 	display:block;
 	cursor:pointer;
 }
+${MEDIA_QUERY_MD} {
+	width:25vw;
+	height:25vw;
+}
+${MEDIA_QUERY_SM} {
+	width:25vw;
+	height:25vw;
+}
 `
 
 
@@ -46,10 +55,22 @@ const LeftPart = styled.div `
 display:flex;
 justify-content:center;
 align-items:center;
+${MEDIA_QUERY_MD} {
+	font-size:0.7rem;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.7rem;
+}
 `
 
 const Username = styled.div `
 margin:0 40px;
+${MEDIA_QUERY_MD} {
+	margin:0 20px;
+}
+${MEDIA_QUERY_SM} {
+	margin:0 10px;
+}
 `
 
 const SeparationLineStraight = styled.div `
@@ -64,15 +85,33 @@ display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
+${MEDIA_QUERY_MD} {
+	margin:0 20px;
+}
+${MEDIA_QUERY_SM} {
+	margin:0 10px;
+}
 `
 
 const Transaction = styled.div `
 font-size:1.2rem;
 font-weight:800;
+${MEDIA_QUERY_MD} {
+	font-size:0.8rem;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.8rem;
+}
 `
 
 const TransactionWord = styled.div `
 font-size:0.8rem;
+${MEDIA_QUERY_MD} {
+	font-size:0.4rem;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.4rem;
+}
 `
 
 const FollowersWrappper = styled.div `
@@ -81,15 +120,33 @@ display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
+${MEDIA_QUERY_MD} {
+	margin:0 20px;
+}
+${MEDIA_QUERY_SM} {
+	margin:0 10px;
+}
 `
 
 const Followers = styled.div `
 font-size:1.2rem;
 font-weight:800;
+${MEDIA_QUERY_MD} {
+	font-size:0.8rem;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.8rem;
+}
 `
 
 const FollowersWord = styled.div `
 font-size:0.8rem;
+${MEDIA_QUERY_MD} {
+	font-size:0.4rem;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.4rem;
+}
 `
 
 const EditProfile = styled.div `
@@ -107,6 +164,18 @@ font-size:0.9rem;
 	background-color:white;
 	color:#1C1C1C;
 	border:1.5px solid #1C1C1C;
+}
+${MEDIA_QUERY_MD} {
+	width:12vw;
+	height:2vh;
+	font-size:0.7rem;
+	line-height:2vh;
+}
+${MEDIA_QUERY_SM} {
+	width:12vw;
+	height:2vh;
+	font-size:0.5rem;
+	line-height:2vh;
 }
 `
 

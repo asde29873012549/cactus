@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {parseISO, formatDistanceToNow} from 'date-fns'
+import {MEDIA_QUERY_SM, MEDIA_QUERY_MD} from '../breakpoints'
 
 
 
@@ -53,19 +54,47 @@ margin-right:30px;
 &:hover {
 	cursor:pointer;
 }
+${MEDIA_QUERY_MD} {
+	width:50%;
+	margin-right:5%;
+	font-size:0.6rem;
+}
+${MEDIA_QUERY_SM} {
+	width:50%;
+	margin-right:5%;
+	font-size:0.6rem;
+}
 `
 
 const SentTime = styled.div `
 font-size:0.8rem;
 color:grey;
+${MEDIA_QUERY_MD} {
+	font-size:0.4rem;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.4rem;
+}
 `
 
 const Sender = styled.div `
 font-size:0.8rem;
+${MEDIA_QUERY_MD} {
+	font-size:0.4rem;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.4rem;
+}
 `
 
 const MessageBody = styled.div `
 color:grey
+${MEDIA_QUERY_MD} {
+	font-size:0.6rem;
+}
+${MEDIA_QUERY_SM} {
+	font-size:0.6rem;
+}
 `
 
 export default function ChatList ({message, onMessageListClick}) {

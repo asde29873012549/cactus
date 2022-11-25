@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import facebook from './static/facebook.jpg'
+import {MEDIA_QUERY_SM, MEDIA_QUERY_MD} from '../breakpoints'
 
 const FaceBookSignIn = styled.div `
 width:100%;
@@ -13,6 +14,14 @@ display:flex;
 align-items:center;
 &:hover {
 	cursor:pointer;
+}
+${MEDIA_QUERY_MD} {
+	height:3vh;
+	font-size:0.7rem;
+}
+${MEDIA_QUERY_SM} {
+	height:3vh;
+	font-size:0.7rem;
 }
 `
 

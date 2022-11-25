@@ -14,7 +14,8 @@ let initialState = {
 	},
 	listing:[],
 	filter:[],
-	likes:null
+	likes:null,
+	sideBarMobileActive:false
 }
 
 const shopSlice = createSlice({
@@ -65,6 +66,9 @@ const shopSlice = createSlice({
 				state.listing = []
 			}
 			
+		},
+		openSideBarMobile:(state) => {
+			state.sideBarMobileActive = !state.sideBarMobileActive
 		}
 	}
 })
@@ -80,7 +84,8 @@ export const {
 	removeFilter,
 	likePressed,
 	clearFilter,
-	getAllFilteredListing
+	getAllFilteredListing,
+	openSideBarMobile
 } = shopSlice.actions
 export const shopSelector = state => state.shop
 export default shopSlice.reducer

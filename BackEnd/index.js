@@ -12,7 +12,7 @@ import {options} from './ec_payment_Config.js'
 
 import {users, addUser, removeUser, getUser} from './socket.js'
 const app = express()
-const port = 5001
+const port =  (process.env.PORT || 5001)
 
 import listingController from './controllers/listing.js'
 import userController from './controllers/user.js'
