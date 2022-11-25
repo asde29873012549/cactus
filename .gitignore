@@ -1,3 +1,4 @@
 FrontEnd/.env
 BackEnd/.env
+.DS_Store
 BackEnd/sequelize/config/config.json
