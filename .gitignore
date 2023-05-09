@@ -1,0 +1,12 @@
+FrontEnd/node_modules
+BackEnd/node_modules
+BackEnd/package.json
+BackEnd/package-lock.json
+FrontEnd/package.json
+FrontEnd/package-lock.json
+BackEnd/.DS_Store
+BackEnd/.env
+.DS_Store
+FrontEnd/.DS_Store
+FrontEnd/.env
+

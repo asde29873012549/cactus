@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.js": "/static/js/main.9b1c4624.js",
+    "static/media/prada_2021_menswear_video.webm": "/static/media/prada_2021_menswear_video.d3be2436569cf05ca5c0.webm",
+    "static/media/googleIcon.jpg": "/static/media/googleIcon.4ff9a5f6e189dba3d48e.jpg",
+    "static/media/emojiIcon.png": "/static/media/emojiIcon.ac6d9b98706da081723e.png",
+    "index.html": "/index.html",
+    "static/media/x-circle.svg": "/static/media/x-circle.bd4906d4f5c28e4d73214d1258d63a2e.svg",
+    "main.9b1c4624.js.map": "/static/js/main.9b1c4624.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.9b1c4624.js"
+  ]
+}
